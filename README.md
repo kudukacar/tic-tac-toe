@@ -8,7 +8,7 @@ A command line Tic-Tac-Toe game
 4. In your terminal, navigate to the project folder
 5. Type the following in the terminal: pipenv install
 6. Type the following in the terminal after the above executes: pipenv shell
-7. Type the following in the terminal to play the game: 
+7. Type the following in the terminal to play the game: python -m src.tictactoe.py
 
 ## Run tests
 1. Type the following in the terminal to run the tests: pytest

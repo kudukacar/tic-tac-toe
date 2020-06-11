@@ -1,7 +1,7 @@
 import pytest
 from src.display import Display
 
-class FakeStdout:
+class StdoutLogger:
     def __init__(self):
         self.log = ""
 
@@ -10,7 +10,7 @@ class FakeStdout:
 
 class TestDisplay:
     def test_output(self):
-        stdout = FakeStdout()
+        stdout = StdoutLogger()
         message = "Welcome to Tic-Tac-Toe"
         display = Display(stdout)
 
