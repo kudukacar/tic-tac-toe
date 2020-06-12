@@ -1,5 +1,6 @@
 from src.board import Board
 
+
 class TestBoard:
     def test_place(self):
         board = Board()
