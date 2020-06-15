@@ -13,9 +13,18 @@ class InputOutputDisplay:
         return self.inputs.pop(0)
 
 
+class BoardWithOneAvailable:
+    def get(position):
+        if position == 1:
+            return False
+        else:
+            return True
+
+
 class TestUser:
     def test_get_input(self):
-        display = InputOutputDisplay(["?", "10", "1"])
-        player = Player()
+        display = InputOutputDisplay(["?", "10", "2", "1"])
+        board = BoardWithOneAvailable
+        player = Player("X")
 
-        assert player.get_selection(display) == 1
+        assert player.get_selection(display, board) == 1
