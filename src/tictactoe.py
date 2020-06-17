@@ -11,17 +11,19 @@ class TicTacToe:
         self.presenter = presenter
         self.players = players
         self.board = board
+        self.count = 0
 
     def run(self):
         self.show_board()
-        self.play_turn(self.players[0])
-        self.show_board()
-        self.play_turn(self.players[1])
-        self.show_board()
+        while self.board.draw() == False and self.board.winner() == None:
+            self.play_turn()
+            self.show_board()
 
-    def play_turn(self, player):
+    def play_turn(self):
+        player = self.players[self.count % 2]
         selection = player.get_selection(self.display, self.board)
         self.board.place(selection, player.token)
+        self.count += 1
 
     def show_board(self):
         self.display.output(self.presenter.display_board(self.board))
